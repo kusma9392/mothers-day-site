@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Mother's Day</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body{
+            margin:0;
+            font-family:Arial, sans-serif;
+            background:linear-gradient(to bottom,#ffd6e7,#fff0f6);
+            overflow:hidden;
+            text-align:center;
+        }
+
+        .container{
+            margin-top:100px;
+            padding:20px;
+        }
+
+        h1{
+            color:#d63384;
+            font-size:40px;
+        }
+
+        p{
+            font-size:22px;
+            color:#444;
+            line-height:1.6;
+        }
+
+        .heart{
+            position:absolute;
+            color:pink;
+            font-size:25px;
+            animation:float 6s linear infinite;
+        }
+
+        @keyframes float{
+            0%{
+                transform:translateY(100vh);
+                opacity:1;
+            }
+            100%{
+                transform:translateY(-10vh);
+                opacity:0;
+            }
+        }
+
+        .btn{
+            margin-top:20px;
+            padding:12px 25px;
+            border:none;
+            border-radius:25px;
+            background:#ff4d88;
+            color:white;
+            font-size:18px;
+            cursor:pointer;
+        }
+
+        .btn:hover{
+            transform:scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>💖 Happy Mother's Day 💖</h1>
+
+        <p>
+            Dear Mom,<br><br>
+            You are my first teacher,<br>
+            my biggest support,<br>
+            and my forever home. 🌸<br><br>
+            Thank you for everything.<br>
+            I love you endlessly ❤️
+        </p>
+
+        <button class="btn" onclick="showMessage()">
+            Click Me 🌷
+        </button>
+    </div>
+
+    <script>
+        function showMessage(){
+            alert("Mom, you make life beautiful 💕");
+        }
+
+        function createHeart(){
+            const heart=document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML="💖";
+
+            heart.style.left=Math.random()*100+"vw";
+            heart.style.animationDuration=
+                (Math.random()*3+3)+"s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(()=>{
+                heart.remove();
+            },6000);
+        }
+
+        setInterval(createHeart,300);
+    </script>
+
+</body>
+</html>
